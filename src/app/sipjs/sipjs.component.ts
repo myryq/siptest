@@ -15,7 +15,7 @@ export class SipjsComponent implements OnInit {
   public remoteAudio = new window.Audio();
 
   public number = '5555';
-  public webSocketServer = 'wss://10.98.76.88:8080/ws';
+  public webSocketServer = 'wss://10.98.76.88:4443/ws';
   public displayName = 'test';
 
   public simpleUserDelegate: SimpleUserDelegate = {
@@ -35,6 +35,10 @@ export class SipjsComponent implements OnInit {
     media: {
       remote: {
         audio: this.remoteAudio,
+      },
+      constraints: {
+        video: false,
+        audio: true,
       },
     },
     userAgentOptions: {
